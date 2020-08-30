@@ -4,10 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = {
+    context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry:{
-      main:   './src/index.js', //откуда стоит начать webpack - у
-      analytics:  './src/analytics.js',
+      main:   './index.js', //откуда стоит начать webpack - у
+      analytics:  './analytics.js',
     } ,
     output: {
         //куда складывать файлы
@@ -16,7 +17,7 @@ module.exports = {
     },
     plugins:[
         new HtmlWebpackPlugin({
-            template: './src/index.html' 
+            template: './index.html' 
         }),
         new CleanWebpackPlugin(),
     ]
