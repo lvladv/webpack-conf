@@ -1,0 +1,19 @@
+@import 'fonts.css';
+
+.container{
+    margin: 0 auto;
+    max-width: 1000px;
+    padding:10rem;
+    background-image: url('../img/unnamed.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Dancing'; 
+    border: 1px solid rgb(110, 148, 181);
+    border-radius: 8px;
+    
+}
+
+h1{
+    text-align: center;
+    color: rgb(241, 244, 235);
+}
