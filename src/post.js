@@ -1,13 +1,3 @@
-export default class Post{
-    constructor(title){
-        this.title = title
-        this.date = new Date()
-    }
-
-    toString(){
-        return JSON.stringify({
-            ttile: this.title,
-            date: this.date.toJSON()
-        })
-    }
+export  const Hello = () => {
+console.log('hello')
 }

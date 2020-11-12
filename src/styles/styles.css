@@ -4,6 +4,7 @@
     margin: 0 auto;
     max-width: 1000px;
     padding:10rem;
+    background-color: rgb(232, 213, 70);
     background-image: url('../img/unnamed.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -15,5 +16,5 @@
 
 h1{
     text-align: center;
-    color: rgb(241, 244, 235);
+    color: rgb(158, 222, 32);
 }

@@ -1,72 +1,40 @@
-const path = require('path')
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const isDev = process.env.NODE_ENV === "development"
-
-console.log(isDev)
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
-    mode: 'development',
-    entry: {
-        main: './index.js', //откуда стоит начать webpack - у
-        analytics: './analytics.js',
-    },
-    output: {
-        //куда складывать файлы
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist')
-    },
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-        }
-    },
-    devServer: {
-        port: 4200,
-        hot: isDev
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './index.html'
-        }),
-        new CleanWebpackPlugin(),
-        // new CopyPlugin({
-        //     patterns: [
-        //         { from: path.resolve(__dirname, 'favicon.ico'), to: path.resolve(__dirname, 'dist') },
-        //     ],
-        // }),
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-        }),
+  entry: {
+    main: './src/index.js',
+    hello: './src/post.js'
+},
+
+plugins: [
+    //todo посмотреть что можно добавить 
+    new CleanWebpackPlugin(),
+     // не видит css
+    new HtmlWebpackPlugin({
+      title: 'Output Management',
+    }),
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'], //todo посмотреть что можно добавить 
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource', //todo посмотреть что можно добавить 
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource', //todo посмотреть что можно добавить 
+      }
     ],
-    // alias: {
-    //     src: path.resolve(__dirname, 'src')
-    // },  НАСТРОИТЬ НОРМАЛЬНО!
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: isDev,
-                            reloadAll: true,
-                        },
-                    }, 'css-loader'],
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg)$/,
-                use: ['file-loader'],
-            },
-            {
-                test: /\.(ttf|woff|woff2)$/,
-                use: ['file-loader'],
-            }
-        ]
-    }
-}
+  },
+};
