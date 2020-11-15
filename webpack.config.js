@@ -9,12 +9,19 @@ module.exports = {
     hello: './src/post.js'
 },
 
+mode: 'development',
+devtool: 'inline-source-map',
+//todo посмотреть что можно добавить 
+devServer: {
+  contentBase: './dist',
+},
+
 plugins: [
     //todo посмотреть что можно добавить 
     new CleanWebpackPlugin(),
      // не видит css
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      title: 'Development',
     }),
   ],
   output: {

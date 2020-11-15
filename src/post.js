@@ -1,3 +1,3 @@
 export  const Hello = () => {
-console.log('hello')
+console.log('hellooooo')
 }

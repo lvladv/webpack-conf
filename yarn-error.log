@@ -1,0 +1,61 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js start
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.19.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/vlad/Documents/myProjects/webpack-conf/package.json: Unexpected token } in JSON at position 239
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "webpack-conf",
+    "version": "1.0.0",
+    "description": "",
+    "main": "webpack.config.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "webpack",
+      "start": "webpack serve --open",
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/lvladv/webpack-conf.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/lvladv/webpack-conf/issues"
+    },
+    "homepage": "https://github.com/lvladv/webpack-conf#readme",
+    "devDependencies": {
+      "clean-webpack-plugin": "^3.0.0",
+      "css-loader": "^5.0.1",
+      "html-webpack-plugin": "^4.5.0",
+      "style-loader": "^2.0.0",
+      "webpack": "^5.4.0",
+      "webpack-cli": "^4.2.0",
+      "webpack-dev-server": "^3.11.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
